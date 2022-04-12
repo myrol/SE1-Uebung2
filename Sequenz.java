@@ -1,10 +1,10 @@
 import java.util.HashMap;
 
 public class Sequenz implements SequenzIF {
-    String[] seq;
+    String[][] abh;
 
-    public Sequenz(String[] _seq) {
-        seq = _seq;
+    public Sequenz(String[][] _abh) {
+        abh = _abh;
     }
 
     @Override
@@ -13,7 +13,7 @@ public class Sequenz implements SequenzIF {
     }
 
     @Override
-    public HashMap<String, boolean> fill(String[] arr) {
+    public HashMap<String, Boolean> fill(String[] arr) {
         return null;
     }
 }
