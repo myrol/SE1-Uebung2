@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SequenzTest {
     String[] sequence = {"A","B","C","D"};
-    Testing test;
+    Sequenz test;
     @BeforeEach
-    void TestingTestSetup(){
-        test = new Testing(new String[][]{{"A", "C"}, {"C", "D"}, {"B", "C"}});
+    void Setup(){
+        test = new Sequenz(new String[][]{{"A", "C"}, {"C", "D"}, {"B", "C"}});
     }
 
     @Test
