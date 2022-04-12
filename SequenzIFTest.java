@@ -1,21 +1,34 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SequenzIFTest {
-
+    Sequenz s;
+    String[] testString =  {"A","B","C","D"};
+    @BeforeEach
+    void testUmgebung()
+    {
+        s = new Sequenz(new String[][]{{"A","C"},{"C","D"},{"B","C"}});
+    }
     @Test
-    @DisplayName("Ein Input String soll nicht ausgeführt werden können, wenn der Vorgänger nicht abgearbeitet wurde.")
+    @DisplayName("Ein Input String soll nicht ausgefuehrt werden koennen, wenn der Vorgaenger nicht abgearbeitet wurde.")
     void isWellSorted() {
-        Sequenz s = new Sequenz(new String[][]{{"A","C"},{"C","D"},{"B","C"}});
-        assertTrue(s.isWellSorted(new String[]{"A", "B", "C", "D"}));
+        assertTrue(s.isWellSorted(testString));
         assertFalse(s.isWellSorted(new String[]{"D", "C", "B", "A"}));
     }
 
     @Test
-    @DisplayName("Ein Hashmap soll mit Strings als Key und Boolean als Value gefüllt werden.")
+    @DisplayName("Ein Hashmap soll mit Strings als Key und mit False Booleans als Value gefuellt werden.")
     void fill() {
-        fail();
+        HashMap<String, Boolean> test = s.fill(testString);
+        assertFalse(test.get("A"));
+        assertFalse(test.get("B"));
+        assertFalse(test.get("C"));
+        assertFalse(test.get("D"));
+        assertTrue((test.get("E") == null));
     }
 }
