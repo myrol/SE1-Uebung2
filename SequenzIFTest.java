@@ -10,7 +10,7 @@ class SequenzIFTest {
     void isWellSorted() {
         Sequenz s = new Sequenz(new String[][]{{"A","C"},{"C","D"},{"B","C"}});
         assertTrue(s.isWellSorted(new String[]{"A", "B", "C", "D"}));
-        assertFalse(s.isWellSorted(new String[]{"D","C","B","A"}));
+        assertFalse(s.isWellSorted(new String[]{"D", "C", "B", "A"}));
     }
 
     @Test
