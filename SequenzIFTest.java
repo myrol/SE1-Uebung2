@@ -22,6 +22,8 @@ class SequenzIFTest {
         assertFalse(s.isWellSorted(new String[]{"C","A"}));
         assertFalse(s.isWellSorted(new String[]{"D", "C", "B", "A"}));
         assertFalse(s.isWellSorted(new String[]{"A","A","C","D"}));
+        assertFalse(s.isWellSorted(new String[]{"A","B","C","C"}));
+        assertTrue(s.isWellSorted(new String[]{"A","C","D"}));
     }
 
     @Test
